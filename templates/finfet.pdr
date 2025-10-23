@@ -1,0 +1,30 @@
+# GTS Command File for FINFET Electrostatic Simulation
+# This is a placeholder file.
+# It will be populated with the necessary commands to run the simulation.
+
+# --- General ---
+# title "FINFET 2D"
+
+# --- Files ---
+# grid from "output/finfet.msh" format "gmsh"
+# output "output/potential.dat" format "tecplot"
+
+# --- Physics ---
+# physics "poisson"
+
+# --- Materials ---
+# material "Si"
+# material "SiO2"
+
+# --- Regions ---
+# region "fin" material "Si"
+# region "gate_oxide" material "SiO2"
+# region "gate" material "metal"
+
+# --- Contacts ---
+# contact "source" region "fin"
+# contact "drain" region "fin"
+# contact "gate" region "gate"
+
+# --- Solve ---
+# solve "poisson"
